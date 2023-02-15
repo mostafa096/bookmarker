@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      tr {
+        background-color: #1d2024;
+      }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="container text-center text-white py-5">
+      <h1>Bookmarker</h1>
+      <form class="py-5 text-dark px-md-5 mx-md-5">
+        <h2 class="text-white mb-5">Bookmark your favorite sites</h2>
+        <!-- form -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="bname"
+            placeholder="name@s.com"
+          />
+          <label for="bname">Site Name</label>
+          <div class="alert alert-danger mt-1" role="alert">Name is required</div>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="burl"
+            placeholder="Site URL"
+          />
+          <label for="burl">Site URL</label>
+          <div class="alert alert-danger" role="alert">
+            Url Field is required
+          </div>
+        </div>
+        <button
+          id="submit"
+          class="btn btn-outline-light fs-5 px-4 py-2 mt-5"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+      <div class="px-md-5 mx-md-5">
+        <table class="table text-white">
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
