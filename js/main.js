@@ -3,7 +3,8 @@ var bmUrl = document.getElementById("burl");
 var submit = document.getElementById("submit");
 var tbody = document.getElementById("tbody");
 var deleteBtn = document.getElementById("del");
-console.log(deleteBtn);
+var alertName = document.getElementById("alertname");
+var alertUrl = document.getElementById("alerturl");
 
 var mainArr = [];
 
@@ -46,11 +47,16 @@ function deletebtn(index) {
 submit.addEventListener("click", function (e) {
   e.preventDefault();
 
-  add();
-  display();
-  localStorage.setItem("data", JSON.stringify(mainArr));
-  clearForm();
+  if (bmName.value === "") {
+    alertName.style.cssText = `display: block!important;`;
+  } else if (bmUrl.value === "") {
+    alertUrl.style.cssText = `display: block!important;`;
+  } else {
+    alertName.style.cssText = `display: none!important;`;
+    alertUrl.style.cssText = `display: none!important;`;
+    add();
+    display();
+    localStorage.setItem("data", JSON.stringify(mainArr));
+    clearForm();
+  }
 });
-
-
-var x = /(https)?:\/\/[^\s\/$.?#].[^\s]*/;
